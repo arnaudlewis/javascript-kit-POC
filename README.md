@@ -12,41 +12,21 @@
 #### NPM
 
 ```sh
-npm install prismic.io --save
+npm install alw-prismic.io --save
 ```
-
-#### CDN
-
-```
-https://npmcdn.com/prismic.io@2.0.0/dist/prismic.io.min.js
-```
-
-(You may need to adapt the version number)
-
-#### Downloadable version
-
-On our release page: [https://github.com/prismicio/javascript-kit/releases](https://github.com/prismicio/javascript-kit/releases).
-
-The kit is universal, it can be used:
-
-* Server-side with NodeJS
-* Client-side as part of your build with Browserify, Webpack (you need a [Promise polyfill](https://github.com/jakearchibald/es6-promise) to support IE11 and below)
-* Client-side with a simple script tag
 
 ### Starter kits
 
 For new project, you can start from a sample project:
 
-* [Node.js project](https://github.com/prismicio/nodejs-sdk)
-* [Simple in-browser project](https://github.com/prismicio/javascript-jquery-starter)
-* [Static pages generation with baked.js](https://github.com/prismicio/baked.js)
+* [Node.js project](https://github.com/arnaudlewis/jskit-demo)
 
 ### Usage
 
 To fetch documents from your repository, you need to fetch the Api data first.
 
 ```javascript
-var Prismic = require('prismic.io');
+var Prismic = require('alw-prismic.io');
 
 Prismic.api("http://lesbonneschoses.prismic.io/api", function(error, api) {
   var options = {}; // In Node.js, pass the request as 'req' to read the reference from the cookies
