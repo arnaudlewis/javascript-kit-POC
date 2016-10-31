@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/prismic.io.svg)](http://badge.fury.io/js/prismic.io)
 [![Build Status](https://api.travis-ci.org/prismicio/javascript-kit.png)](https://travis-ci.org/prismicio/javascript-kit)
 [![Code Climate](https://codeclimate.com/github/prismicio/javascript-kit.png)](https://codeclimate.com/github/prismicio/javascript-kit)
+[![Test Coverage](https://codeclimate.com/github/prismicio/javascript-kit/badges/coverage.svg)](https://codeclimate.com/github/prismicio/javascript-kit/coverage)
 
 * The [source code](https://github.com/prismicio/javascript-kit) is on Github.
 * The [Changelog](https://github.com/prismicio/javascript-kit/releases) is on Github's releases tab.
@@ -12,23 +13,42 @@
 #### NPM
 
 ```sh
-npm install alw-prismic.io --save
+npm install prismic.io --save
 ```
+
+#### CDN
+
+```
+https://unpkg.com/prismic.io/dist/prismic.io.min.js
+```
+
+(You may need to adapt the version number)
+
+#### Downloadable version
+
+On our release page: [https://github.com/prismicio/javascript-kit/releases](https://github.com/prismicio/javascript-kit/releases).
+
+The kit is universal, it can be used:
+
+* Server-side with NodeJS
+* Client-side as part of your build with Browserify, Webpack (you need a [Promise polyfill](https://github.com/jakearchibald/es6-promise) to support IE11 and below)
+* Client-side with a simple script tag
 
 ### Starter kits
 
 For new project, you can start from a sample project:
 
-* [Node.js project](https://github.com/arnaudlewis/jskit-demo)
+* [Node.js project](https://github.com/prismicio/nodejs-sdk)
+* [Node.js blog](https://github.com/prismicio/nodejs-blog)
 
 ### Usage
 
 To fetch documents from your repository, you need to fetch the Api data first.
 
 ```javascript
-var Prismic = require('alw-prismic.io');
+var Prismic = require('prismic.io');
 
-Prismic.api("http://lesbonneschoses.prismic.io/api", function(error, api) {
+Prismic.api("http://your_repository_name.prismic.io/api", function(error, api) {
   var options = {}; // In Node.js, pass the request as 'req' to read the reference from the cookies
   api.query("", options, function(error, response) { // An empty query will return all the documents
     if (error) {
