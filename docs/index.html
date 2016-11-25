@@ -43,55 +43,22 @@
 
 
     <section>
-        <article><h2>JavaScript development kit for prismic.io</h2><p><a href="http://badge.fury.io/js/prismic.io"><img src="https://badge.fury.io/js/prismic.io.svg" alt="npm version"></a>
-<a href="https://travis-ci.org/prismicio/javascript-kit"><img src="https://api.travis-ci.org/prismicio/javascript-kit.png" alt="Build Status"></a>
-<a href="https://codeclimate.com/github/prismicio/javascript-kit"><img src="https://codeclimate.com/github/prismicio/javascript-kit.png" alt="Code Climate"></a>
-<a href="https://codeclimate.com/github/prismicio/javascript-kit/coverage"><img src="https://codeclimate.com/github/prismicio/javascript-kit/badges/coverage.svg" alt="Test Coverage"></a></p>
+        <article><h2>JavaScript development kit for prismic.io</h2><p><a href="http://badge.fury.io/js/alw-prismic.io"><img src="https://badge.fury.io/js/alw-prismic.io.svg" alt="npm version"></a>
+<a href="https://travis-ci.org/arnaudlewis/prismic-jskit-v4"><img src="https://api.travis-ci.org/arnaudlewis/prismic-jskit-v4.png" alt="Build Status"></a></p>
 <ul>
-<li>The <a href="https://github.com/prismicio/javascript-kit">source code</a> is on Github.</li>
-<li>The <a href="https://github.com/prismicio/javascript-kit/releases">Changelog</a> is on Github's releases tab.</li>
+<li>The <a href="https://github.com/arnaudlewis/prismic-jskit-v4">source code</a> is on Github.</li>
+<li>The <a href="https://github.com/arnaudlewis/prismic-jskit-v4/releases">Changelog</a> is on Github's releases tab.</li>
 </ul>
-<h3>Installation</h3><h4>NPM</h4><pre class="prettyprint source lang-sh"><code>npm install alw-prismic.io --save</code></pre><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<h4>CDN</h4><pre class="prettyprint source"><code>https://unpkg.com/prismic.io/dist/prismic.io.min.js</code></pre><p>(You may need to adapt the version number)</p>
-<h4>Downloadable version</h4><p>On our release page: <a href="https://github.com/prismicio/javascript-kit/releases">https://github.com/prismicio/javascript-kit/releases</a>.</p>
+<h3>Installation</h3><h4>NPM</h4><pre class="prettyprint source lang-sh"><code>npm install alw-prismic.io --save</code></pre><h4>CDN</h4><pre class="prettyprint source"><code>https://unpkg.com/alw-prismic.io/dist/prismic.io.min.js</code></pre><p>(You may need to adapt the version number)</p>
+<h4>Downloadable version</h4><p>On our release page: <a href="https://github.com/arnaudlewis/prismic-jskit-v4/releases">https://github.com/arnaudlewis/prismic-jskit-v4/releases</a>.</p>
 <p>The kit is universal, it can be used:</p>
 <ul>
 <li>Server-side with NodeJS</li>
 <li>Client-side as part of your build with Browserify, Webpack (you need a <a href="https://github.com/jakearchibald/es6-promise">Promise polyfill</a> to support IE11 and below)</li>
 <li>Client-side with a simple script tag</li>
 </ul>
-<h3>Starter kits</h3><p>For new project, you can start from a sample project:</p>
-<ul>
-<li><a href="https://github.com/arnaudlewis/jskit-demo">Node.js project</a></li>
-</ul>
-<h3>Usage</h3><p>To fetch documents from your repository, you need to fetch the Api data first.</p>
-<pre class="prettyprint source lang-javascript"><code>var Prismic = require('alw-prismic.io');
-
-Prismic.api(&quot;http://your_repository_name.prismic.io/api&quot;, function(error, api) {
-  var options = {}; // In Node.js, pass the request as 'req' to read the reference from the cookies
-  api.query(&quot;&quot;, options, function(error, response) { // An empty query will return all the documents
-    if (error) {
-      console.log(&quot;Something went wrong: &quot;, err);
-    }
-    console.log(&quot;Documents: &quot;, response.documents);
-  });
-});</code></pre><p>All asynchronous calls return ES2015 promises, so alternatively you can use them instead of callbacks.</p>
-<pre class="prettyprint source lang-javascript"><code>var Prismic = require('prismic.io');
-
-Prismic.api(&quot;https://lesbonneschoses.prismic.io/api&quot;).then(function(api) {
-  return api.query(&quot;&quot;); // An empty query will return all the documents
-}).then(function(response) {
-  console.log(&quot;Documents: &quot;, response.results);
-}, function(err) {
-  console.log(&quot;Something went wrong: &quot;, err);
-});</code></pre><p>See the <a href="https://prismic.io/docs">developer documentation</a> or the <a href="http://prismicio.github.io/javascript-kit/">API documentation</a> for more details on how to use it.</p>
-<h3>Contribute to the kit</h3><p>Contribution is open to all developer levels, read our &quot;<a href="https://developers.prismic.io/documentation/UszOeAEAANUlwFpp/contribute-to-the-official-kits">Contribute to the official kits</a>&quot; documentation to learn more.</p>
-<h4>Install the kit locally</h4><p>Source files are in the <code>lib/</code> directory. You only need <a href="http://www.joyent.com/blog/installing-node-and-npm/">Node.js and npm</a>
-to work on the codebase.</p>
-<pre class="prettyprint source"><code>npm install
-npm test</code></pre><h4>Documentation</h4><p>Please document any new feature or bugfix using the <a href="http://usejsdoc.org/">JSDoc</a> syntax. You don't need to generate the documentation, we'll do that.</p>
-<p>If you feel an existing area of code is lacking documentation, feel free to write it; but please do so on its own branch and pull-request.</p>
-<p>If you find existing code that is not optimally documented and wish to make it better, we really appreciate it; but you should document it on its own branch and its own pull request.</p>
+<h3>Documentation</h3><p>It'll come soon!
+You'll find here all the documentation to get your content for each kind of prismic fragment.</p>
 <h3>License</h3><p>This software is licensed under the Apache 2 license, quoted below.</p>
 <p>Copyright 2013-2016 Zengularity (http://www.zengularity.com).</p>
 <p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.</p>
@@ -112,7 +79,7 @@ npm test</code></pre><h4>Documentation</h4><p>Please document any new feature or
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Thu Nov 24 2016 12:01:28 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Nov 25 2016 00:26:24 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>
